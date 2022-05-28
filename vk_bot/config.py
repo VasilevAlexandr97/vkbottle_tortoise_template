@@ -67,6 +67,3 @@ def setup_config() -> Config:
         bot_msgs=load_yaml_file(DATA_DIR.joinpath("messages.yaml")),
         bot_btns=load_yaml_file(DATA_DIR.joinpath("buttons.yaml"))
     )
-
-
-config = setup_config()
