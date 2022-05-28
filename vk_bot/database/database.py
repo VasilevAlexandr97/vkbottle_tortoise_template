@@ -22,7 +22,7 @@ async def database_connection():
     await Tortoise.init(
         db_url=config.db_url,
         modules={
-            "models": ["vk_bot.models.user"],
+            "models": ["vk_bot.database.models.user"],
         }
     )
 
