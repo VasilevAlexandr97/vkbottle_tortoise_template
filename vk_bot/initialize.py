@@ -3,6 +3,11 @@ from vkbottle.bot import Bot
 from vk_bot.config import config
 from vk_bot.database.database import on_shutdown, on_startup
 from vk_bot.handlers import bps
+from vk_bot.middlewares.registration import RegistrationMiddleware
+
+
+def setup_middlewares(bot: Bot) -> None:
+    bot.labeler.message_view.register_middleware(RegistrationMiddleware)
 
 
 def setup_handlers(bot: Bot):
@@ -18,6 +23,7 @@ def setup_bot() -> Bot:
     bot.loop_wrapper.on_startup.append(on_startup())
     bot.loop_wrapper.on_shutdown.append(on_shutdown())
 
+    setup_middlewares(bot)
     setup_handlers(bot=bot)
 
     # Returnging initializated bot

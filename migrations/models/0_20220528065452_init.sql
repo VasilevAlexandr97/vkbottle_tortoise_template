@@ -1,0 +1,12 @@
+-- upgrade --
+CREATE TABLE IF NOT EXISTS "bot_users" (
+    "id" SERIAL NOT NULL PRIMARY KEY,
+    "vk_id" BIGINT NOT NULL,
+    "created_at" TIMESTAMPTZ NOT NULL  DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS "aerich" (
+    "id" SERIAL NOT NULL PRIMARY KEY,
+    "version" VARCHAR(255) NOT NULL,
+    "app" VARCHAR(100) NOT NULL,
+    "content" JSONB NOT NULL
+);
