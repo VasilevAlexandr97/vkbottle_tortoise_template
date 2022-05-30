@@ -1,3 +1,6 @@
+vk_bot/data/messages.yaml
+vk_bot/data/buttons.yaml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
